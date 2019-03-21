@@ -10,8 +10,8 @@ import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout>
-    <Box style={{ textAlign: 'right', margin: '0 0 0 auto' }}>
-      <Title as="h2" size="large">
+    <Box>
+      <Title as="h1" size="extra-large">
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
       <Modal>

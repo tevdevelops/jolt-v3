@@ -5,11 +5,19 @@ import Head from 'components/head';
 import Header from 'components/header';
 import GlobalStyle from 'global.css.js';
 
-const Layout = ({ data, children }) => (
+export const logo = graphql`
+  query {
+    fileName: file(relativePath: {eq: "images/logo.svg"}) {
+      publicURL
+    }
+  }
+`;
+
+const Layout = ({ logo, children }) => (
   <div>
     <GlobalStyle />
     <Head />
-    <Header title={data.site.siteMetadata.siteTitle} />
+    <Header logo={logo} />
     {children}
   </div>
 );
@@ -29,6 +37,7 @@ const LayoutWithQuery = props => (
           }
         }
       }
+      query
     `}
     render={data => <Layout data={data} {...props} />}
   />

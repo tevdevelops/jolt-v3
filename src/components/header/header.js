@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 import { Container } from './header.css';
-import Title from 'components/title';
 import Nav from 'components/header/nav';
+import { Image } from 'rebass'
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -22,11 +22,11 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = ({ title }) => (
+const Header = logo => (
   <AnimatedContainer>
     <Container>
       <Link to="/">
-        <Title as="h1">{title}</Title>
+        <Image src={logo} alt="Logo" />
       </Link>
 
       <Nav />
@@ -35,7 +35,7 @@ const Header = ({ title }) => (
 );
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
 };
 
 export default Header;

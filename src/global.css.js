@@ -91,4 +91,8 @@ export default createGlobalStyle`
   p {
     margin-bottom: 2rem;
   }
+  .section-container {
+    text-align: right;
+    margin: 0 0 0 auto;
+  }
 `;
